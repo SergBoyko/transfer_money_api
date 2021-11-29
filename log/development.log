@@ -1,0 +1,3017 @@
+Started GET "/" for 127.0.0.1 at 2021-11-28 16:13:02 +0300
+  [1m[35m (26.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sergey/.rvm/gems/ruby-2.7.4/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sergey/.rvm/gems/ruby-2.7.4/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 35.0ms | Allocations: 399)
+Completed 200 OK in 52ms (Views: 46.7ms | ActiveRecord: 0.0ms | Allocations: 3401)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-11-28 16:13:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (71.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (75.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20211128153957)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "amount" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211128153957"]]
+  [1m[36mTRANSACTION (91.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-11-28 15:42:10.227471"], ["updated_at", "2021-11-28 15:42:10.227471"]]
+  [1m[36mTRANSACTION (57.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bill"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Bill"], ["amount", 1000.0], ["created_at", "2021-11-28 15:54:11.023737"], ["updated_at", "2021-11-28 15:54:11.023737"]]
+  [1m[36mTRANSACTION (49.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Julia"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Julia"], ["amount", 10000.0], ["created_at", "2021-11-28 15:54:11.084920"], ["updated_at", "2021-11-28 15:54:11.084920"]]
+  [1m[36mTRANSACTION (77.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/users.json" for 127.0.0.1 at 2021-11-28 19:07:25 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as JSON
+  Rendering api/v1/users/index.json.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/v1/users/index.json.jbuilder:1
+  Rendered api/v1/users/index.json.jbuilder (Duration: 5.8ms | Allocations: 3685)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.6ms | Allocations: 5242)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 19:08:30 +0300
+Processing by Api::V1::UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.23ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.7ms | Allocations: 5186)
+
+
+Started GET "/api/v1/users.json" for 127.0.0.1 at 2021-11-28 19:08:51 +0300
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 948)
+
+
+Started GET "/api/v1/users.json" for 127.0.0.1 at 2021-11-28 19:09:03 +0300
+Processing by Api::V1::UsersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.24ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 965)
+
+
+Started GET "/api/v1/users.json" for 127.0.0.1 at 2021-11-28 19:09:58 +0300
+Processing by Api::V1::UsersController#index as JSON
+  Rendering api/v1/users/index.json.jbuilder
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/api/v1/users/index.json.jbuilder:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/v1/users/index.json.jbuilder:1
+  Rendered api/v1/users/index.json.jbuilder (Duration: 6.2ms | Allocations: 3527)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.9ms | Allocations: 4399)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 19:12:58 +0300
+Processing by Api::V1::UsersController#index as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 828)
+
+
+  
+ActionController::UnknownFormat (Api::V1::UsersController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (6.1.4.1) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 19:16:40 +0300
+Processing by Api::V1::UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.33ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 4569)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 19:23:36 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.21ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 4248)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 19:24:26 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.2ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 956)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 19:24:38 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.21ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 954)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 19:24:51 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.26ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 954)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 19:25:09 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+No serializer found for resource: #<User id: 1, username: "Bill", amount: 1000.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 15:54:11.023737000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.19ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 954)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:25:16 +0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::UsersController
+Did you mean?  index
+               update):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:29:14 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users/1"):
+  
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:29:24 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"id"=>"1", "amount"=>"10000"}, "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2830)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Api::V1::UsersController:0x000000000219d0>):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started GET "/api/v1/users/1?id=1&amount=10000" for 127.0.0.1 at 2021-11-28 19:36:11 +0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::UsersController
+Did you mean?  index
+               update):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started PUT "/api/v1/users/1?id=1&amount=10000" for 127.0.0.1 at 2021-11-28 19:36:20 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 2861)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Api::V1::UsersController:0x00000000021b10>):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:41:00 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"json"=>{"params"=>{"id"=>"1", "amount"=>"10000"}}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 2407)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Api::V1::UsersController:0x00000000021bb0>):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1?id=1&amount=10000" for 127.0.0.1 at 2021-11-28 19:44:52 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "amount"=>"10000"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2407)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Api::V1::UsersController:0x00000000021c50>):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:45:48 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"id"=>"1", "amount"=>"10000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 2407)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Api::V1::UsersController:0x00000000021d90>):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:46:57 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"id"=>"1", "amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms | Allocations: 6074)
+
+
+  
+NoMethodError (undefined method `update_attributes' for #<User:0x00007f86fc925010>
+Did you mean?  update_attribute):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:50:19 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"id"=>"1", "amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 3866)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:53:01 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"id"=>"1", "amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3825)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:54:36 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"id"=>"1", "username"=>"Bill", "amount"=>"10000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms | Allocations: 545)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:56:21 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"id"=>"1", "username"=>"Bill", "amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 3832)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:57:02 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms | Allocations: 545)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 19:59:18 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3864)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:00:42 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.7ms | Allocations: 3790)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  username
+               controller
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:18:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:02:20 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3845)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bill"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Julia"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 100000.0], ["updated_at", "2021-11-28 17:03:57.225340"], ["id", 1]]
+  [1m[36mTRANSACTION (64.4ms)[0m  [1m[36mcommit transaction[0m
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:04:42 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3826)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:05:27 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"id"=>"1", "username"=>"Bill", "amount"=>"10000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms | Allocations: 546)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, NilClass passed.):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:06:22 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.23ms)
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 0.8ms | Allocations: 4485)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:06:52 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.38ms)
+Completed 200 OK in 9ms (Views: 1.4ms | ActiveRecord: 0.9ms | Allocations: 4316)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:07:06 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 4297)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:08:04 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 100.0], ["updated_at", "2021-11-28 17:08:04.402781"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (85.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 100ms (Views: 0.9ms | ActiveRecord: 86.8ms | Allocations: 9073)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:08:53 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3824)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:09:26 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 3866)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/api/v1/users_controller.rb:13:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:12:29 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.7ms | Allocations: 3792)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  username
+               controller
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:21:in `user_params'
+app/controllers/api/v1/users_controller.rb:13:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:13:10 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "username"=>"Bill", "amount"=>"10000"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.7ms | Allocations: 3809)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  username
+               controller
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:21:in `user_params'
+app/controllers/api/v1/users_controller.rb:13:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:14:31 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3826)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:15:01 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 4299)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:15:47 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 9ms (ActiveRecord: 1.2ms | Allocations: 3807)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  controller
+               id
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:18:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:16:24 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 10000.0], ["updated_at", "2021-11-28 17:16:24.928269"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (69.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.27ms)
+Completed 200 OK in 94ms (Views: 1.5ms | ActiveRecord: 71.3ms | Allocations: 9381)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:17:38 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.7ms | Allocations: 3807)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  controller
+               id
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:18:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:18:52 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.8ms | Allocations: 3806)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  controller
+               id
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:22:13 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.8ms | Allocations: 3785)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  controller
+               id
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:22:32 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.8ms | Allocations: 3825)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  controller
+               id
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:24:03 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 8ms (ActiveRecord: 0.9ms | Allocations: 3831)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: {"amount"=>"10000", "controller"=>"api/v1/users", "action"=>"update", "id"=>"1"}
+Did you mean?  amount
+               controller
+               action
+               id):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:25:34 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 9ms (ActiveRecord: 1.2ms | Allocations: 3786)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: params
+Did you mean?  action
+               amount
+               controller
+               id):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:26:13 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.7ms | Allocations: 3806)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  controller
+               id
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:27:34 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 9ms (ActiveRecord: 1.1ms | Allocations: 3787)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  controller
+               id
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:28:52 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"amount"=>"10000", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.7ms | Allocations: 3786)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users
+Did you mean?  controller
+               id
+               action
+               amount):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:31:07 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"user"=>{"amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 5753)
+
+
+  
+NameError (undefined local variable or method `user' for #<Api::V1::UsersController:0x00000000028910>
+Did you mean?  user1):
+  
+app/controllers/api/v1/users_controller.rb:15:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:31:51 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"user"=>{"amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 5743)
+
+
+  
+NameError (undefined local variable or method `user' for #<Api::V1::UsersController:0x000000000297e8>
+Did you mean?  user1):
+  
+app/controllers/api/v1/users_controller.rb:15:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:37:43 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.3ms | Allocations: 3419)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  params
+               controller
+               id
+               action):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:38:36 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.7ms | Allocations: 3825)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  params
+               controller
+               id
+               action):
+  
+app/controllers/api/v1/users_controller.rb:20:in `user_params'
+app/controllers/api/v1/users_controller.rb:12:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:39:06 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.23ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 4311)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:40:06 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"10000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 6144)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:40:27 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100001"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 100001.0], ["updated_at", "2021-11-28 17:40:27.223844"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (58.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 65ms (Views: 0.5ms | ActiveRecord: 59.2ms | Allocations: 5018)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:46:03 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 100.0], ["updated_at", "2021-11-28 17:46:03.488216"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (74.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 88ms (Views: 1.0ms | ActiveRecord: 74.6ms | Allocations: 8359)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:52:48 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 3396)
+
+
+  
+ArgumentError (comparison of Float with nil failed):
+  
+app/controllers/api/v1/users_controller.rb:14:in `>='
+app/controllers/api/v1/users_controller.rb:14:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:54:09 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3794)
+
+
+  
+ArgumentError (comparison of Float with nil failed):
+  
+app/controllers/api/v1/users_controller.rb:15:in `>='
+app/controllers/api/v1/users_controller.rb:15:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:55:01 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 3809)
+
+
+  
+TypeError (String can't be coerced into Float):
+  
+app/controllers/api/v1/users_controller.rb:14:in `-'
+app/controllers/api/v1/users_controller.rb:14:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:55:30 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3790)
+
+
+  
+ArgumentError (comparison of Float with String failed):
+  
+app/controllers/api/v1/users_controller.rb:13:in `>='
+app/controllers/api/v1/users_controller.rb:13:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:56:23 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3789)
+
+
+  
+ArgumentError (comparison of Float with String failed):
+  
+app/controllers/api/v1/users_controller.rb:13:in `>='
+app/controllers/api/v1/users_controller.rb:13:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:57:39 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms | Allocations: 3832)
+
+
+  
+ArgumentError (comparison of Float with String failed):
+  
+app/controllers/api/v1/users_controller.rb:13:in `>='
+app/controllers/api/v1/users_controller.rb:13:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:57:57 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3818)
+
+
+  
+ArgumentError (comparison of Float with String failed):
+  
+app/controllers/api/v1/users_controller.rb:14:in `>='
+app/controllers/api/v1/users_controller.rb:14:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:58:43 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3817)
+
+
+  
+ArgumentError (comparison of Float with String failed):
+  
+app/controllers/api/v1/users_controller.rb:15:in `>='
+app/controllers/api/v1/users_controller.rb:15:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:59:03 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3862)
+
+
+  
+ArgumentError (comparison of Float with String failed):
+  
+app/controllers/api/v1/users_controller.rb:15:in `>='
+app/controllers/api/v1/users_controller.rb:15:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 20:59:46 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3803)
+
+
+  
+ArgumentError (comparison of Float with String failed):
+  
+app/controllers/api/v1/users_controller.rb:15:in `>='
+app/controllers/api/v1/users_controller.rb:15:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:00:36 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.28ms)
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 1.1ms | Allocations: 4339)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:01:11 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 99.0], ["updated_at", "2021-11-28 18:01:11.377498"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (66.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 83ms (Views: 1.1ms | ActiveRecord: 67.7ms | Allocations: 8947)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:02:56 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"2"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 97.0], ["updated_at", "2021-11-28 18:02:56.734330"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (54.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 61ms (Views: 0.5ms | ActiveRecord: 55.3ms | Allocations: 5021)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:03:03 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 650)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:03:19 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 589)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:04:30 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 400 Bad Request in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 4039)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:12:50 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Zeitwerk::NameError (expected file /home/sergey/RailsProjects/money_transfer_api/app/helpers/api/v1/user_helper.rb to define constant Api::V1::UserHelper, but didn't):
+  
+app/controllers/api/v1/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/api/v1/users_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/users_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:12:58 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"2"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 95.0], ["updated_at", "2021-11-28 18:12:58.015588"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (56.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.21ms)
+Completed 200 OK in 70ms (Views: 1.7ms | ActiveRecord: 57.1ms | Allocations: 9673)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:13:55 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"2"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 93.0], ["updated_at", "2021-11-28 18:13:55.616309"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (60.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.27ms)
+Completed 200 OK in 71ms (Views: 1.4ms | ActiveRecord: 61.6ms | Allocations: 5045)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:14:01 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"2"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 91.0], ["updated_at", "2021-11-28 18:14:01.451738"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (53.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 200 OK in 59ms (Views: 0.9ms | ActiveRecord: 53.6ms | Allocations: 5044)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:14:09 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 665)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-28 21:20:44 +0300
+  
+Zeitwerk::NameError (expected file /home/sergey/RailsProjects/money_transfer_api/app/helpers/api/v1/user_helper.rb to define constant Api::V1::UserHelper, but didn't):
+  
+zeitwerk (2.5.1) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.5.1) lib/zeitwerk/kernel.rb:28:in `block in require'
+zeitwerk (2.5.1) lib/zeitwerk/kernel.rb:27:in `tap'
+zeitwerk (2.5.1) lib/zeitwerk/kernel.rb:27:in `require'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:288:in `const_get'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:288:in `block in constantize'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:284:in `each'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:284:in `inject'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:284:in `constantize'
+activesupport (6.1.4.1) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:176:in `block in modules_for_helpers'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:169:in `map!'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:169:in `modules_for_helpers'
+actionpack (6.1.4.1) lib/action_controller/metal/helpers.rb:104:in `modules_for_helpers'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:147:in `helper'
+actionpack (6.1.4.1) lib/action_controller/railties/helpers.rb:19:in `inherited'
+railties (6.1.4.1) lib/rails/application_controller.rb:3:in `<main>'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/loaded_features_index.rb:100:in `register'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.5.1) lib/zeitwerk/kernel.rb:35:in `require'
+railties (6.1.4.1) lib/rails/welcome_controller.rb:3:in `<main>'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/loaded_features_index.rb:100:in `register'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.5.1) lib/zeitwerk/kernel.rb:35:in `require'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:288:in `const_get'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:288:in `block in constantize'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:284:in `each'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:284:in `inject'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:284:in `constantize'
+activesupport (6.1.4.1) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.4.1) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.4.1) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.4.1) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.4.1) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.4.1) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-28 21:20:50 +0300
+Processing by Api::V1::UsersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 400 Bad Request in 3ms (Views: 1.1ms | Allocations: 850)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:36:11 +0300
+  
+Zeitwerk::NameError (expected file /home/sergey/RailsProjects/money_transfer_api/app/helpers/api/v1/user_helper.rb to define constant Api::V1::UserHelper, but didn't):
+  
+app/controllers/api/v1/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/api/v1/users_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/users_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:38:28 +0300
+  
+Zeitwerk::NameError (expected file /home/sergey/RailsProjects/money_transfer_api/app/helpers/api/v1/user_helper.rb to define constant Api::V1::UserHelper, but didn't):
+  
+app/controllers/api/v1/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/api/v1/users_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/users_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:39:04 +0300
+  
+Zeitwerk::NameError (expected file /home/sergey/RailsProjects/money_transfer_api/app/helpers/api/v1/user_helper.rb to define constant Api::V1::UserHelper, but didn't):
+  
+app/controllers/api/v1/users_controller.rb:4:in `<class:UsersController>'
+app/controllers/api/v1/users_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/users_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:40:54 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 400 Bad Request in 8ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 4737)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:42:30 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 4061)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:43:14 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 609)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:43:27 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 400 Bad Request in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 4061)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:48:36 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"20000"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 609)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:53:46 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.7ms | Allocations: 5643)
+
+
+  
+NoMethodError (undefined method `transaction_result' for #<Api::V1::UsersController:0x00000000020490>):
+  
+app/controllers/api/v1/users_controller.rb:14:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:54:02 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 90.0], ["updated_at", "2021-11-28 18:54:02.399327"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mTRANSACTION (54.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 67ms (Views: 0.8ms | ActiveRecord: 55.4ms | Allocations: 8968)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:54:31 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 89.0], ["updated_at", "2021-11-28 18:54:31.319802"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mTRANSACTION (62.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 62.7ms | Allocations: 5036)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:54:45 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 88.0], ["updated_at", "2021-11-28 18:54:45.906086"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mTRANSACTION (55.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 200 OK in 62ms (Views: 0.6ms | ActiveRecord: 55.7ms | Allocations: 5033)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 21:54:58 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 87.0], ["updated_at", "2021-11-28 18:54:58.081874"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+  [1m[36mTRANSACTION (50.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 57ms (Views: 0.6ms | ActiveRecord: 50.7ms | Allocations: 5035)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 23:52:19 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 5897)
+
+
+  
+NameError (uninitialized constant Api::V1::UserHelper::TOKEN):
+  
+app/helpers/api/v1/user_helper.rb:10:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-28 23:52:53 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.8ms | Allocations: 6160)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:14:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 00:49:22 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 0.5ms | Allocations: 5417)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:14:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:00:57 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 0.3ms | Allocations: 1679)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:14:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:05:27 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.1ms | Allocations: 1222)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:14:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:12:11 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 0.5ms | Allocations: 1538)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:14:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:19:22 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 0.4ms | Allocations: 4089)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:23:02 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 0.1ms | Allocations: 1072)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:25:23 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.1ms | Allocations: 1070)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:25:53 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.1ms | Allocations: 1068)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:26:22 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 0.1ms | Allocations: 1069)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 01:26:31 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `update'
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 0.1ms | Allocations: 1068)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:17:in `update'
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-29 01:59:33 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.43ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 4745)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-11-29 01:59:52 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 958)
+
+
+Started GET "/api/v1/users?amount=1" for 127.0.0.1 at 2021-11-29 02:00:55 +0300
+Processing by Api::V1::UsersController#index as */*
+  Parameters: {"amount"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.22ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 956)
+
+
+Started GET "/api/v1/users?amount=1" for 127.0.0.1 at 2021-11-29 02:01:25 +0300
+Processing by Api::V1::UsersController#index as */*
+  Parameters: {"amount"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.19ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 956)
+
+
+Started GET "/api/v1/users?amount=1" for 127.0.0.1 at 2021-11-29 02:01:42 +0300
+Processing by Api::V1::UsersController#index as */*
+  Parameters: {"amount"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.2ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 954)
+
+
+Started GET "/api/v1/users?amount=1" for 127.0.0.1 at 2021-11-29 02:03:54 +0300
+Processing by Api::V1::UsersController#index as */*
+  Parameters: {"amount"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.19ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started GET "/api/v1/users?amount=1" for 127.0.0.1 at 2021-11-29 02:04:12 +0300
+Processing by Api::V1::UsersController#index as */*
+  Parameters: {"amount"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.21ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:06:04 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.1ms | Allocations: 1321)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:18:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:08:57 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 0.1ms | Allocations: 1068)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:18:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:09:45 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 952)
+
+
+Started PUT "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:12:17 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/users"):
+  
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:13:06 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.8ms | Allocations: 4564)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:18:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:14:31 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.1ms | Allocations: 1205)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:18:in `update'
+Started GET "/api/v1/users/?amount=1" for 127.0.0.1 at 2021-11-29 02:15:26 +0300
+Processing by Api::V1::UsersController#index as */*
+  Parameters: {"amount"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.28ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1307)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:18:39 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.24ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:19:08 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.22ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:20:50 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.35ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:21:01 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.25ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:30:00 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 1555)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:30:26 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 0.2ms | Allocations: 1223)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:18:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:30:56 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.28ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 952)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:31:06 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.22ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 02:31:18 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 87.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 18:54:58.081874000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:31:29 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 0.1ms | Allocations: 1210)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:18:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:32:09 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:14:in `update'
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.1ms | Allocations: 1218)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:18:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:34:23 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:20:in `update'
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:20:in `update'
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.8ms | Allocations: 4986)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:24:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:34:37 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:20:in `update'
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.1ms | Allocations: 1246)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:24:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:36:02 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 86.0], ["updated_at", "2021-11-28 23:36:02.391677"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mTRANSACTION (49.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Api::V1::User (0.21ms)
+Completed 200 OK in 62ms (Views: 1.7ms | ActiveRecord: 50.6ms | Allocations: 9177)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:40:26 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 4092)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:41:32 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 400 Bad Request in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 4087)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:42:42 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1000"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 400 Bad Request in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 4107)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:42:47 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.1ms | Allocations: 1076)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:43:26 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.7ms | Allocations: 4535)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:44:22 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.7ms | Allocations: 4558)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:45:15 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 0.7ms | Allocations: 4537)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:46:16 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.7ms | Allocations: 4535)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:46:45 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 85.0], ["updated_at", "2021-11-28 23:46:45.279610"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mTRANSACTION (654.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Api::V1::User (0.15ms)
+Completed 200 OK in 666ms (Views: 0.8ms | ActiveRecord: 655.9ms | Allocations: 9059)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:47:01 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 84.0], ["updated_at", "2021-11-28 23:47:01.230545"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mTRANSACTION (60.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Api::V1::User (0.2ms)
+Completed 200 OK in 69ms (Views: 0.7ms | ActiveRecord: 60.5ms | Allocations: 5034)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:48:13 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 0.7ms | Allocations: 4493)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result?'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:51:36 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 83.0], ["updated_at", "2021-11-28 23:51:36.857933"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mTRANSACTION (58.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Api::V1::User (0.2ms)
+Completed 200 OK in 73ms (Views: 1.1ms | ActiveRecord: 59.5ms | Allocations: 9135)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:52:14 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.7ms | Allocations: 4490)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:53:39 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 82.0], ["updated_at", "2021-11-28 23:53:39.959146"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mTRANSACTION (52.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Api::V1::User (0.2ms)
+Completed 200 OK in 66ms (Views: 1.5ms | ActiveRecord: 53.8ms | Allocations: 8789)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:54:18 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.7ms | Allocations: 4490)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:55:21 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.1ms | Allocations: 1160)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:56:55 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.1ms | Allocations: 1158)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:58:18 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.1ms | Allocations: 1162)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 02:59:21 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.1ms | Allocations: 1158)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:00:09 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.7ms | Allocations: 4622)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:02:05 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.1ms | Allocations: 1162)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:05:06 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 0.9ms | Allocations: 4603)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:05:15 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:05:52 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.8ms | Allocations: 4428)
+
+
+  
+SocketError (Failed to open TCP connection to api.bank1.com:80 (getaddrinfo: Name or service not known)):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:06:15 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1307)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:06:15 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.1ms | Allocations: 983)
+
+
+  
+SocketError (Failed to open TCP connection to api.bank1.com:80 (getaddrinfo: Name or service not known)):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:06:54 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.2ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 952)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:06:54 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms | Allocations: 843)
+
+
+  
+SocketError (Failed to open TCP connection to api.bank1.com:80 (getaddrinfo: Name or service not known)):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:07:18 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.26ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.8ms | Allocations: 4694)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:07:18 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 0.2ms | Allocations: 1368)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:07:53 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.24ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 952)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:07:53 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:08:37 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.36ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 952)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:08:37 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.1ms | Allocations: 1162)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:10:04 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.32ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 952)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:10:04 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 0.1ms | Allocations: 1163)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:12:13 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.7ms | Allocations: 4525)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:15:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:14:57 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.7ms | Allocations: 5676)
+
+
+  
+NoMethodError (undefined method `stub_request' for #<Api::V1::UsersController:0x000000000352a0>
+Did you mean?  set_request!):
+  
+app/helpers/api/v1/user_helper.rb:5:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:19:47 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.32ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1305)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:19:47 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms | Allocations: 2323)
+
+
+  
+NoMethodError (undefined method `stub_request' for #<Api::V1::UsersController:0x00000000035390>
+Did you mean?  set_request!):
+  
+app/helpers/api/v1/user_helper.rb:5:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:21:23 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.25ms)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.8ms | Allocations: 4677)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:21:23 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 2434)
+
+
+  
+NoMethodError (undefined method `stub_request' for #<Api::V1::UsersController:0x000000000362b8>
+Did you mean?  set_request!):
+  
+app/helpers/api/v1/user_helper.rb:5:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:22:21 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.38ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.8ms | Allocations: 4652)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:22:21 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.2ms | Allocations: 1368)
+
+
+  
+Errno::ECONNRESET (Connection reset by peer):
+  
+app/helpers/api/v1/user_helper.rb:17:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 03:26:18 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 82.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-28 23:53:39.959146000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.25ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 4698)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:26:19 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 394ms (ActiveRecord: 0.2ms | Allocations: 2338)
+
+
+  
+NoMethodError (undefined method `bytesize' for #<Hash:0x00007f0ec0d3a768>):
+  
+app/helpers/api/v1/user_helper.rb:25:in `block in transaction_result'
+app/helpers/api/v1/user_helper.rb:20:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 03:27:36 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.9ms | Allocations: 5216)
+
+
+  
+NoMethodError (undefined method `bytesize' for #<Hash:0x000055f462b7ca58>):
+  
+app/helpers/api/v1/user_helper.rb:25:in `block in transaction_result'
+app/helpers/api/v1/user_helper.rb:20:in `transaction_result'
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:09:50 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 138ms (ActiveRecord: 0.5ms | Allocations: 7128)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:12:00 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 198ms (ActiveRecord: 0.8ms | Allocations: 6263)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:14:06 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `update'
+  [1m[36mApi::V1::User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `update'
+  [1m[36mApi::V1::User Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 81.0], ["updated_at", "2021-11-29 01:14:06.915306"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (56.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Api::V1::User (0.2ms)
+Completed 200 OK in 69ms (Views: 1.2ms | ActiveRecord: 57.8ms | Allocations: 9282)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:16:25 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Bill"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mApi::V1::User Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "amount" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["amount", 80.0], ["updated_at", "2021-11-29 01:16:25.988586"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mTRANSACTION (58.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Api::V1::User (0.21ms)
+Completed 200 OK in 78ms (Views: 1.7ms | ActiveRecord: 59.6ms | Allocations: 8996)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:16:39 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 139ms (ActiveRecord: 0.8ms | Allocations: 4798)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:17:00 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 119ms (ActiveRecord: 0.7ms | Allocations: 4834)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:17:46 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 116ms (ActiveRecord: 0.8ms | Allocations: 4788)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:20:09 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `update'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.9ms | Allocations: 4134)
+
+
+  
+Errno::ECONNREFUSED (Failed to open TCP connection to localhost:80 (Connection refused - connect(2) for "localhost" port 80)):
+  
+app/controllers/api/v1/users_controller.rb:19:in `update'
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 04:23:09 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 118ms (ActiveRecord: 0.7ms | Allocations: 4777)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:33:30 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.25ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 4642)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:33:30 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 400 Bad Request in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 765)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:34:21 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 954)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:34:21 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 594)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:35:15 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:35:15 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 400 Bad Request in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 594)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:35:29 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.21ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:35:29 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 594)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:35:50 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:35:50 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 594)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:36:18 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:36:18 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 594)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:36:38 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 264ms (ActiveRecord: 0.1ms | Allocations: 1325)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:40:22 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.27ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 4676)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:40:22 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 400 Bad Request in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 758)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:40:22 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 594)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:40:38 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.22ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:40:38 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 594)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:40:38 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 172ms (ActiveRecord: 0.1ms | Allocations: 1449)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:41:45 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 128ms (ActiveRecord: 0.1ms | Allocations: 1448)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:43:23 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 184ms (ActiveRecord: 0.1ms | Allocations: 1448)
+
+
+Started GET "/api/v1/users/" for 127.0.0.1 at 2021-11-29 11:44:24 +0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `index'
+No serializer found for resource: #<Api::V1::User id: 1, username: "Bill", amount: 80.0, created_at: "2021-11-28 15:54:11.023737000 +0000", updated_at: "2021-11-29 01:16:25.988586000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Api::V1::User::ActiveRecord_Relation (0.22ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 953)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:44:24 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"100000", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 400 Bad Request in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 594)
+
+
+Started PUT "/api/v1/users/1" for 127.0.0.1 at 2021-11-29 11:44:24 +0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"params"=>{"amount"=>"1", "destination"=>"2"}, "id"=>"1"}
+  [1m[36mApi::V1::User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `update'
+No template found for Api::V1::UsersController#update, rendering head :no_content
+Completed 204 No Content in 112ms (ActiveRecord: 0.1ms | Allocations: 1448)
+
+
